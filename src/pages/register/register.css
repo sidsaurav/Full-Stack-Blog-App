@@ -40,9 +40,8 @@
 }
 
 .registerLoginButton {
-    position: absolute;
-    top: 60px;
-    right: 20px;
+    margin-top: 50px;
+    width: 200px;
     background-color: lightcoral;
     padding: 10px;
     color: white;
