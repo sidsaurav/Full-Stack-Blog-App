@@ -24,7 +24,7 @@ const Settings = () => {
                         <input type="text" placeholder="Name" />
                         <label>Email</label>
                         <input type="email" placeholder="name@example.com" />
-                        <label>Username</label>
+                        <label>Password</label>
                         <input type="password" />
                         <button className="settingsSubmit">Update</button>
                     </div>
