@@ -1,27 +1,43 @@
+import { useLocation } from "react-router-dom"
+import { useState, useEffect } from "react";
+import axios from "axios"
 import "./singlePost.css"
 
 const SinglePost = () => {
+    const location = useLocation();
+    let path = location.pathname.split("/")[2];
+
+    const [post, setPost] = useState({});
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            const res = await axios.get(`/posts/${path}`)
+            setPost(res.data)
+        }
+        fetchPost()
+    }, [path])
+
     return (
         <div className="singlePost">
             <div class="singlePostWrapper">
-                <img
-                    className="singlePostImg"
-                    src="https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?cs=srgb&dl=pexels-markus-spiske-1089440.jpg&fm=jpg" alt="pic" />
+                {post.photo &&
+                    <img
+                        className="singlePostImg"
+                        src={post.photo} alt="pic" class="singlePostPhoto" />
+                }
                 <h1 className="singlePostTitle">
-                    Lorem ipsum dolor sit amet.
+                    {post.title}
                     <div className="singlePostEdit">
                         <i className="singlePostIcon far fa-edit"></i>
                         <i className="singlePostIcon far fa-trash-alt"></i>
                     </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="singlePostAuthor">Author : <b>Harry</b></span>
-                    <span className="singlePostAuthor">1 hour ago</span>
+                    <span className="singlePostAuthor">Author : <b>{post.username}</b></span>
+                    <span className="singlePostAuthor">{new Date(post.updatedAt).toDateString()}</span>
                 </div>
                 <div class="singlePostDesc">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    {post.desc}
                 </div>
             </div>
         </div>
