@@ -2,12 +2,13 @@ import "./post.css"
 import { Link } from "react-router-dom"
 
 const Post = ({ post }) => {
+    const PF = "http://localhost:5000/images/"
     return (
         <div className="post">
             {post.photo &&
                 (<img
                     className="postImg"
-                    src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?cs=srgb&dl=pexels-designecologist-1779487.jpg&fm=jpg" alt="img" />)}
+                    src={PF + post.photo} alt="img" />)}
             <div className="postInfo">
                 <div className="postCats">
                     {post.categories.map((c) => {

@@ -1,8 +1,16 @@
 import "./topbar.css"
 import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 const Topbar = () => {
-    let user = true;
+    const { user, dispatch } = useContext(Context);
+    const PF = "http://localhost/5000/images/"
+
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" });
+    };
+
     return (
         <div className="top">
             <div className="topLeft">
@@ -17,15 +25,20 @@ const Topbar = () => {
                     <li className="topListItem"><Link to="/write" className="link">WRITE</Link></li>
                     <li className="topListItem"><Link to="/about" className="link">ABOUT</Link></li>
                     <li className="topListItem"><Link to="/contact" className="link">CONTACT</Link></li>
-                    <li className="topListItem"><Link to="/" className="link">{user && "LOGOUT"}</Link></li>
+                    <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
                 </ul>
             </div>
             <div className="topRight">
                 {user ? <>
-                    <img className="topImg" src="https://i.pinimg.com/736x/70/18/27/701827f915f3b68876368f260537e732.jpg" alt="pp" />
-                    <i className="topSearchIcon fas fa-search"></i> </> : (
-                    <Link to="/login" className="link">Login</Link>
-                )}
+                    <Link to="/settings">
+                        <img className="topImg" src={PF + user.profilePic} alt="pp" />
+                    </Link>
+                    <i className="topSearchIcon fas fa-search"></i> </> :
+                    (<>
+                        <Link to="/login" className="link topListItem">Login</Link>
+                        <Link to="/register" className="link topListItem">Register</Link>
+                    </>
+                    )}
             </div>
         </div>
     )

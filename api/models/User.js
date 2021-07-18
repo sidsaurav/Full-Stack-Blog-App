@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        default: "",
+        default: "https://nhsscotlandevents.com/sites/default/files/default_images/person.jpeg",
     },
 
 },
