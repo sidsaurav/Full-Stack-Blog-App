@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 
 const Sidebar = () => {
-
+    const PF = "http://localhost:5000/images/"
     const [cats, setCats] = useState([])
 
     useEffect(() => {
@@ -18,9 +18,9 @@ const Sidebar = () => {
         <div className="sidebar">
             <div className="sidebarItem">
                 <span className="sidebarTitle">ABOUT ME</span>
-                <img className="profileImg" src="https://i.pinimg.com/736x/70/18/27/701827f915f3b68876368f260537e732.jpg" alt="profile" />
+                <img className="profileImg" src={PF+"shinchan.png"} alt="profile" />
                 <p className="aboutText">
-                    Hello internet. I am Siddharth Saurav. An undergraduate from IIT(BHU), Varanasi. I am a Web Developer and also a competitive programmer. I love building things.
+                Hello internet. I am Siddharth Saurav, an undergraduate from IIT(BHU), Varanasi. I am a Web Developer. I also do competitive programming as a hobby. I love building things and you can always find me involved in some sort of projects.
                 </p>
             </div>
             <div className="sidebarItem">

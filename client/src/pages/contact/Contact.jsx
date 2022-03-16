@@ -12,7 +12,7 @@ const Contact = () => {
                <p>
                     Feel free to reach out to me at - <br/><br/>
                     Email: sid.saurav11@gmail.com<br/>
-                    LinkedIn: <Link to="https://www.linkedin.com/in/siddharth-saurav/">linkedin.com/in/siddharth-saurav/</Link><br/>
+                    LinkedIn: <Link to={{ pathname: "https://www.linkedin.com/in/siddharth-saurav/" }} target="_blank" >linkedin.com/in/siddharth-saurav/</Link><br/>
                     
                 </p> 
             </div>
