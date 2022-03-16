@@ -29,7 +29,7 @@
     text-align: center;
 }
 
-.sidebarItem>img {
+.sidebarItem > img {
     margin-top: 15px;
 }
 
@@ -45,8 +45,9 @@
 
 .sidebarListItem {
     display: inline-block;
-    width: 50%;
+    width: auto;
     margin-top: 15px;
+    margin-right: 15px;
     cursor: pointer;
 }
 
@@ -62,4 +63,9 @@
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
+}
+
+.aboutText {
+    margin: 15px;
+    font-family: 'Varela Round', sans-serif;
 }

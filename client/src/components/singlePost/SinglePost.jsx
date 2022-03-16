@@ -51,7 +51,7 @@ const SinglePost = () => {
                 {post.photo &&
                     <img
                         className="singlePostImg"
-                        src={PF + post.photo} alt="pic" class="singlePostPhoto" />
+                        src={PF + post.photo} alt="pic" class="singlePostImg" />
                 }{
                     updateMode ? <input type="text" value={title} className="singlePostTitleInput" autofocus="true"
                         onChange={(e) => { setTitle(e.target.value) }} /> : (

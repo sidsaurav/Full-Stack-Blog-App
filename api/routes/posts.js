@@ -82,7 +82,7 @@ router.get("/", async (req, res) => {
         } else if (catName) {
             posts = await Post.find({
                 categories: {
-                    $in: [catName],
+                    $in: [catName], //get that post which has this category name...
                 },
             });
         } else {

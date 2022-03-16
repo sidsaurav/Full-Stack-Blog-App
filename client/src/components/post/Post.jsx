@@ -12,6 +12,7 @@ const Post = ({ post }) => {
             <div className="postInfo">
                 <div className="postCats">
                     {post.categories.map((c) => {
+                        console.log(c);
                         return <span className="postCat">{c}</span>
                     })}
                 </div>

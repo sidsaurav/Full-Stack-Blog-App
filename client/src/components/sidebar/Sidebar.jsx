@@ -9,8 +9,8 @@ const Sidebar = () => {
 
     useEffect(() => {
         const getCats = async () => {
-            const res = await axios.get("/categories")
-            setCats(res.data)
+            const res = await axios.get("/categories");
+            setCats(res.data);
         }
         getCats()
     }, [])
@@ -19,8 +19,8 @@ const Sidebar = () => {
             <div className="sidebarItem">
                 <span className="sidebarTitle">ABOUT ME</span>
                 <img className="profileImg" src="https://i.pinimg.com/736x/70/18/27/701827f915f3b68876368f260537e732.jpg" alt="profile" />
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p className="aboutText">
+                    Hello internet. I am Siddharth Saurav. An undergraduate from IIT(BHU), Varanasi. I am a Web Developer and also a competitive programmer. I love building things.
                 </p>
             </div>
             <div className="sidebarItem">

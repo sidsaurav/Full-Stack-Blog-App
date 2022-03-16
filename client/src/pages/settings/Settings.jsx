@@ -11,7 +11,7 @@ const Settings = () => {
     const [password, setPassword] = useState("");
 
     const { user, dispatch } = useContext(Context);
-    const PF = "http://localhost/5000/images/"
+    const PF = "http://localhost:5000/images/"
 
 
     const handleSubmit = async (e) => {
@@ -54,7 +54,7 @@ const Settings = () => {
                     <label>Profile Picture</label>
                     <div className="settingsPP">
                         <img className="profileImg"
-                            src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+                            src={file ? URL.createObjectURL(file) : PF+user.profilePic}
                             alt="pic"
                         />
                         <label htmlFor="fileInput">
