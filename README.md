@@ -1,5 +1,5 @@
 <h1 align="center">
-  Excel Clone
+  Full Stack Blog App
 </h1>
 
 # Description:
